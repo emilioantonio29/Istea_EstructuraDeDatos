@@ -28,14 +28,20 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-        <h1>Parcial 1</h1>      
-        <p></p>
+        <h1>Parcial 1</h1>
+        <br>      
+        <p>Profesor: Gabriel Alejandro Wille</p>
+        <p>Alumno: Emilio Martinez</p>
         </div>
     </div>
 
     <div class="container">
         <h2>EL JUEGO DE LA OCA ESPACIAL</h2><br>
         <!-- <p>The .table-responsive class adds a scrollbar to the table when needed:</p>-->
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+          Instrucciones
+        </button>
         <button id="iniciar" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="">Iniciar Juego</button>
         <br><br>
         <div class="d-flex">
@@ -433,6 +439,57 @@
         <button id="lanzaCian" class="btn btn-primary lanzaDados"  style="margin-left: 50px;" accesskey="cian">Lanza los dados Cian</button>
     </div> -->
     <div class="alert-box warning" id="warning">test</div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">EL JUEGO DE LA OCA ESPACIAL</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- <h1>EL JUEGO DE LA OCA ESPACIAL</h1> -->
+            <br>
+            <p>Este juego es similar al juego de la oca pero ocurre en el espacio!!</p>
+            <p>El juego permite hasta 5 jugadores compitiendo en un viaje interestelar para determinar quien es el mejor astronauta.</p>
+            <p>El juego ocurre por turnos, los jugadores se turnaran para lanzar el dado, un dado de 6 caras, y mover su pieza en consecuencia.</p>
+            <p>Cada jugador tendra una ficha de color que sera asignada segun el orden en el que jugaran. El orden sera: Rojo, Magenta, Verde, Amarillo y finalmente Cian.</p>
+            <p>Las reglas del juego son las siguientes:</p>
+            <ul>
+              <li>El tablero consta de 64 casillas comenzando por la número 0, la plataforma de lanzamiento y finalizando en la casilla 63. Quien alcance la casilla 63 primero será el ganador.</li>
+              <li>Hay casillas especiales que pueden complicarnos o ayudarnos, estas son:
+                <ul>
+                  <li><strong>Relays:</strong> Las casillas 1, 5, 14, 23, 27, 36, 41, 45, 50 y 54 son relays interestelares, cada uno esta conectado con su siguiente.<br>
+                      Si un jugador cae en alguno sera propulzado a la velocidad de la luz hasta el próximo relay. <br>
+                      En el caso del ultimo no sucede nada ya que no tiene conexion. <br>
+                      Por ej: si cae en la casilla 14, sera transportado a la 23.
+                  </li>
+                  <li><strong>Portales:</strong> Las casillas 6, 12, 35, 42, cada una es un extremo de un portal, esto es que las casillas 6 y 12 estan conectadas y la 35 con la 42.<br>
+                    Cuando un jugador cae en alguna de estas será transportado al otro extremo del portal.  <br>
+                    Por ej: si cae en 6 será enviado a 12, si cae en 12, será enviado a 6. <br>
+                  </li>
+                  <li><strong>Batallas:</strong> Los casilleros 16, 26, 46, 56 se encuentran en sectores en disputa por lo que el jugador quedara afectado a asistir en batalla a su bando.<br>
+                    El jugador deberá lanzar el dado al comienzo de su proximo turno, si el dado es 4 o 6, el jugador queda desafectado y puede volver a lanzar el dado para avanzar en su viaje de lo contrario pierde el turno y debera repetir esto el proximo turno.
+                  </li>
+                  <li><strong>Agujeros:</strong> Los casilleros 31, 38, 53 se encuentran sobre agujeros negros, estos atrapan todo lo que este cerca y lo devuelven al pasado. <br>
+                    Si un jugador cae aqui, vuelve al casillero 0.
+                  </li>
+                  <li> Los portales y relay se encuentran en territorio declarado neutral por lo que no se puede entrar en conflicto, pero, en todos los demas cuando nos crucemos con otro jugador entraremos en conflicto.<br>
+                    Cada jugador lanzará el dado y ganara quien saque un valor mas alto, el recien llegado se encuentra en desventaja y por eso si resultara en empate, perderá. El perdedor vuelve al 0. <br>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Entendido</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer style="margin-top: 100px;height: 200px;background-color: grey;">
 
     </footer>

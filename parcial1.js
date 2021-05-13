@@ -206,7 +206,7 @@ class Jugador{
         if(this.casilla===16){
             alert(`${this.color} Debes sacar 4 o 6 para salir de la zona de batalla`);
             let dado = Math.floor(Math.random()*6)+1;
-            console.log(`${this.color} BATALLA: sacaste dado`)
+            console.log(`${this.color} BATALLA: sacaste ${dado}`)
             if(dado === 4 || dado === 6){
                 alert(`${this.color} ¡FELICIDADES! sacaste ${dado} y saliste de la zona de batalla`);
                 this.batalla = false
@@ -219,7 +219,7 @@ class Jugador{
         }else if(this.casilla===26){
             alert(`${this.color} Debes sacar 4 o 6 para salir de la zona de batalla`);
             let dado = Math.floor(Math.random()*6)+1;
-            console.log(`${this.color} BATALLA: sacaste dado`)
+            console.log(`${this.color} BATALLA: sacaste ${dado}`)
             if(dado === 4 || dado === 6){
                 alert(`${this.color} ¡FELICIDADES! sacaste ${dado} y saliste de la zona de batalla`);
                 this.batalla = false
@@ -232,7 +232,7 @@ class Jugador{
         }else if(this.casilla===46){
             alert(`${this.color} Debes sacar 4 o 6 para salir de la zona de batalla`);
             let dado = Math.floor(Math.random()*6)+1;
-            console.log(`${this.color} BATALLA: sacaste dado`)
+            console.log(`${this.color} BATALLA: sacaste ${dado}`)
             if(dado === 4 || dado === 6){
                 alert(`${this.color} ¡FELICIDADES! sacaste ${dado} y saliste de la zona de batalla`);
                 this.batalla = false
@@ -245,7 +245,7 @@ class Jugador{
         }else if(this.casilla===56){
             alert(`${this.color} Debes sacar 4 o 6 para salir de la zona de batalla`);
             let dado = Math.floor(Math.random()*6)+1;
-            console.log(`${this.color} BATALLA: sacaste dado`)
+            console.log(`${this.color} BATALLA: sacaste ${dado}`)
             if(dado === 4 || dado === 6){
                 alert(`${this.color} ¡FELICIDADES! sacaste ${dado} y saliste de la zona de batalla`);
                 this.batalla = false
@@ -468,7 +468,12 @@ const lanzaDados = () =>{
             rojoG.status = true
             break; 
         //CASE 2 fin
-        case(cantidad ===3 && rojoG.status):
+        case(cantidad ===3 && rojoG.status && rojoG.batalla):
+            rojoG.batallaF(rojoG.casilla)
+            rojoG.status = false
+            magentaG.status = true
+            break; 
+        case(cantidad ===3 && rojoG.status && !rojoG.batalla):
             rojoG.rollDice()
             rojoG.Relays(rojoG.casilla)
             rojoG.Portales(rojoG.casilla)
@@ -476,7 +481,12 @@ const lanzaDados = () =>{
             rojoG.status = false
             magentaG.status = true
             break; 
-        case(cantidad ===3 && magentaG.status):
+        case(cantidad ===3 && magentaG.status && magentaG.batalla):
+            magentaG.batallaF(magentaG.casilla)
+            magentaG.status = false
+            verdeG.status = true
+            break; 
+        case(cantidad ===3 && magentaG.status && !magentaG.batalla):
             magentaG.rollDice()
             magentaG.Relays(magentaG.casilla)
             magentaG.Portales(magentaG.casilla)
@@ -484,7 +494,12 @@ const lanzaDados = () =>{
             magentaG.status = false
             verdeG.status = true
             break; 
-        case(cantidad ===3 && verdeG.status):
+        case(cantidad ===3 && verdeG.status && verdeG.batalla):
+            verdeG.batallaF(verdeG.casilla)
+            verdeG.status = false
+            rojoG.status = true
+            break; 
+        case(cantidad ===3 && verdeG.status && !verdeG.batalla):
             verdeG.rollDice()
             verdeG.Relays(verdeG.casilla)
             verdeG.Portales(verdeG.casilla)
@@ -493,7 +508,12 @@ const lanzaDados = () =>{
             rojoG.status = true
             break; 
         //CASE 3 fin
-        case(cantidad ===4 && rojoG.status):
+        case(cantidad ===4 && rojoG.status && rojoG.batalla):
+            rojoG.batallaF(rojoG.casilla)
+            rojoG.status = false
+            magentaG.status = true
+        break; 
+        case(cantidad ===4 && rojoG.status && !rojoG.batalla):
             rojoG.rollDice()
             rojoG.Relays(rojoG.casilla)
             rojoG.Portales(rojoG.casilla)
@@ -501,15 +521,25 @@ const lanzaDados = () =>{
             rojoG.status = false
             magentaG.status = true
             break; 
-        case(cantidad ===4 && magentaG.status):
+        case(cantidad ===4 && magentaG.status && magentaG.batalla):
+            magentaG.batallaF(magentaG.casilla)
+            magentaG.status = false
+            verdeG.status = true
+            break; 
+        case(cantidad ===4 && magentaG.status && !magentaG.batalla):
             magentaG.rollDice()
             magentaG.Relays(magentaG.casilla)
             magentaG.Portales(magentaG.casilla)
             magentaG.blackhole(magentaG.casilla)
             magentaG.status = false
             verdeG.status = true
+            break;
+        case(cantidad ===4 && verdeG.status && verdeG.batalla):
+            verdeG.batallaF(verdeG.casilla)
+            verdeG.status = false
+            amarilloG.status = true
             break; 
-        case(cantidad ===4 && verdeG.status):
+        case(cantidad ===4 && verdeG.status && !verdeG.batalla):
             verdeG.rollDice()
             verdeG.Relays(verdeG.casilla)
             verdeG.Portales(verdeG.casilla)
@@ -517,7 +547,12 @@ const lanzaDados = () =>{
             verdeG.status = false
             amarilloG.status = true
             break; 
-        case(cantidad ===4 && amarilloG.status):
+        case(cantidad ===4 && amarilloG.status && amarilloG.batalla):
+            amarilloG.batallaF(amarilloG.casilla)
+            amarilloG.status = false
+            rojoG.status = true
+            break; 
+        case(cantidad ===4 && amarilloG.status && !amarilloG.batalla):
             amarilloG.rollDice()
             amarilloG.Relays(amarilloG.casilla)
             amarilloG.Portales(amarilloG.casilla)
@@ -526,7 +561,12 @@ const lanzaDados = () =>{
             rojoG.status = true
             break; 
         //CASE 4 fin
-        case(cantidad ===5 && rojoG.status):
+        case(cantidad ===5 && rojoG.status && rojoG.batalla):
+            rojoG.batallaF(rojoG.casilla)
+            rojoG.status = false
+            magentaG.status = true
+            break; 
+        case(cantidad ===5 && rojoG.status && !rojoG.batalla):
             rojoG.rollDice()
             rojoG.Relays(rojoG.casilla)
             rojoG.Portales(rojoG.casilla)
@@ -534,23 +574,38 @@ const lanzaDados = () =>{
             rojoG.status = false
             magentaG.status = true
             break; 
-        case(cantidad ===5 && magentaG.status):
+        case(cantidad ===5 && magentaG.status && magentaG.batalla):
+            magentaG.batallaF(magentaG.casilla)
+            magentaG.status = false
+            verdeG.status = true
+            break; 
+        case(cantidad ===5 && magentaG.status && !magentaG.batalla):
             magentaG.rollDice()
             magentaG.Relays(magentaG.casilla)
             magentaG.Portales(magentaG.casilla)
             magentaG.blackhole(magentaG.casilla)
             magentaG.status = false
             verdeG.status = true
+            break;
+        case(cantidad ===5 && verdeG.status && verdeG.batalla):
+            verdeG.batallaF(verdeG.casilla)
+            verdeG.status = false
+            amarilloG.status = true
             break; 
-        case(cantidad ===5 && verdeG.status):
+        case(cantidad ===5 && verdeG.status && !verdeG.batalla):
             verdeG.rollDice()
             verdeG.Relays(verdeG.casilla)
             verdeG.Portales(verdeG.casilla)
             verdeG.blackhole(verdeG.casilla)
             verdeG.status = false
             amarilloG.status = true
-            break; 
-        case(cantidad ===5 && amarilloG.status):
+            break;
+        case(cantidad ===5 && amarilloG.status && amarilloG.batalla):
+            amarilloG.batallaF(amarilloG.casilla)
+            amarilloG.status = false
+            cianG.status = true
+            break;  
+        case(cantidad ===5 && amarilloG.status && !amarilloG.batalla):
             amarilloG.rollDice()
             amarilloG.Relays(amarilloG.casilla)
             amarilloG.Portales(amarilloG.casilla)
@@ -558,7 +613,12 @@ const lanzaDados = () =>{
             amarilloG.status = false
             cianG.status = true
             break; 
-        case(cantidad ===5 && cianG.status):
+        case(cantidad ===5 && cianG.status && cianG.batalla):
+            cianG.batallaF(cianG.casilla)
+            cianG.status = false
+            rojoG.status = true
+            break; 
+        case(cantidad ===5 && cianG.status && !cianG.batalla):
             cianG.rollDice()
             cianG.Relays(cianG.casilla)
             cianG.Portales(cianG.casilla)
