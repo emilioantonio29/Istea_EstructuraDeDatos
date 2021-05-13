@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Parcial 1</title>
+    <style>
+        .warning {
+            color: #8a6d3b;
+            background-color: #fcf8e3;
+            border-color: #faebcc;
+            display: none;
+            position: fixed;
+            top: 200px;
+            z-index: 10000;
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            }
+        .tableBack{
+          background-color: grey !important;
+          color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+        <h1>Parcial 1</h1>      
+        <p></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>EL JUEGO DE LA OCA ESPACIAL</h2><br>
+        <!-- <p>The .table-responsive class adds a scrollbar to the table when needed:</p>-->
+        <button id="iniciar" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="">Iniciar Juego</button>
+        <br><br>
+        <div class="d-flex">
+            <p>Estado el juego:</p>
+            <p id="estado" style="margin-left: 5px;">Sin iniciar</p>
+        </div>
+        <div class="alert alert-danger alert-dismissible fade show">
+            <button type="button" class="close" onclick="cerrar()">&times;</button>
+            <strong>Error!</strong> El juego solo puede iniciar si ingresas numeros entre el 1 y 5.
+        </div>
+        <br><br><br>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Iniciar Juego</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div>
+                      <p>En el siguiente campo solo puedes ingresar numeros del 1 al 5...</p>
+                  </div>
+                  <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Cantidad de Jugadores:</label>
+                      <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="iniciar()">Iniciar</button>                
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Participantes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="rojo">
+                <th>Rojo</th>
+                <td id="rojo0">0</td>
+                <td id="rojo1">1</td>
+                <td id="rojo2">2</td>
+                <td id="rojo3">3</td>
+                <td id="rojo4">4</td>
+                <td id="rojo5">5</td>
+                <td id="rojo6">6</td>
+                <td id="rojo7">7</td>
+                <td id="rojo8">8</td>
+                <td id="rojo9">9</td>
+                <td id="rojo10">10</td>
+                <td id="rojo11">11</td>
+                <td id="rojo12">12</td>
+                <td id="rojo13">13</td>
+                <td id="rojo14">14</td>
+                <td id="rojo15">15</td>
+                <td id="rojo16">16</td>
+                <td id="rojo17">17</td>
+                <td id="rojo18">18</td>
+                <td id="rojo19">19</td>
+                <td id="rojo20">20</td>
+                <td id="rojo21">21</td>
+                <td id="rojo22">22</td>
+                <td id="rojo23">23</td>
+                <td id="rojo24">24</td>
+                <td id="rojo25">25</td>
+                <td id="rojo26">26</td>
+                <td id="rojo27">27</td>
+                <td id="rojo28">28</td>
+                <td id="rojo29">29</td>
+                <td id="rojo30">30</td>
+                <td id="rojo31">31</td>
+                <td id="rojo32">32</td>
+                <td id="rojo33">33</td>
+                <td id="rojo34">34</td>
+                <td id="rojo35">35</td>
+                <td id="rojo36">36</td>
+                <td id="rojo37">37</td>
+                <td id="rojo38">38</td>
+                <td id="rojo39">39</td>
+                <td id="rojo40">40</td>
+                <td id="rojo41">41</td>
+                <td id="rojo42">42</td>
+                <td id="rojo43">43</td>
+                <td id="rojo44">44</td>
+                <td id="rojo45">45</td>
+                <td id="rojo46">46</td>
+                <td id="rojo47">47</td>
+                <td id="rojo48">48</td>
+                <td id="rojo49">49</td>
+                <td id="rojo50">50</td>
+                <td id="rojo51">51</td>
+                <td id="rojo52">52</td>
+                <td id="rojo53">53</td>
+                <td id="rojo54">54</td>
+                <td id="rojo55">55</td>
+                <td id="rojo56">56</td>
+                <td id="rojo57">57</td>
+                <td id="rojo58">58</td>
+                <td id="rojo59">59</td>
+                <td id="rojo60">60</td>
+                <td id="rojo61">61</td>
+                <td id="rojo62">62</td>
+                <td id="rojo63">63</td>
+              </tr>
+              <tr id="magenta">
+                <th>Magenta</th>
+                <td id="magenta0">0</td>
+                <td id="magenta1">1</td>
+                <td id="magenta2">2</td>
+                <td id="magenta3">3</td>
+                <td id="magenta4">4</td>
+                <td id="magenta5">5</td>
+                <td id="magenta6">6</td>
+                <td id="magenta7">7</td>
+                <td id="magenta8">8</td>
+                <td id="magenta9">9</td>
+                <td id="magenta10">10</td>
+                <td id="magenta11">11</td>
+                <td id="magenta12">12</td>
+                <td id="magenta13">13</td>
+                <td id="magenta14">14</td>
+                <td id="magenta15">15</td>
+                <td id="magenta16">16</td>
+                <td id="magenta17">17</td>
+                <td id="magenta18">18</td>
+                <td id="magenta19">19</td>
+                <td id="magenta20">20</td>
+                <td id="magenta21">21</td>
+                <td id="magenta22">22</td>
+                <td id="magenta23">23</td>
+                <td id="magenta24">24</td>
+                <td id="magenta25">25</td>
+                <td id="magenta26">26</td>
+                <td id="magenta27">27</td>
+                <td id="magenta28">28</td>
+                <td id="magenta29">29</td>
+                <td id="magenta30">30</td>
+                <td id="magenta31">31</td>
+                <td id="magenta32">32</td>
+                <td id="magenta33">33</td>
+                <td id="magenta34">34</td>
+                <td id="magenta35">35</td>
+                <td id="magenta36">36</td>
+                <td id="magenta37">37</td>
+                <td id="magenta38">38</td>
+                <td id="magenta39">39</td>
+                <td id="magenta40">40</td>
+                <td id="magenta41">41</td>
+                <td id="magenta42">42</td>
+                <td id="magenta43">43</td>
+                <td id="magenta44">44</td>
+                <td id="magenta45">45</td>
+                <td id="magenta46">46</td>
+                <td id="magenta47">47</td>
+                <td id="magenta48">48</td>
+                <td id="magenta49">49</td>
+                <td id="magenta50">50</td>
+                <td id="magenta51">51</td>
+                <td id="magenta52">52</td>
+                <td id="magenta53">53</td>
+                <td id="magenta54">54</td>
+                <td id="magenta55">55</td>
+                <td id="magenta56">56</td>
+                <td id="magenta57">57</td>
+                <td id="magenta58">58</td>
+                <td id="magenta59">59</td>
+                <td id="magenta60">60</td>
+                <td id="magenta61">61</td>
+                <td id="magenta62">62</td>
+                <td id="magenta63">63</td>
+              </tr>
+              <tr id="verde">
+                <th>Verde</th>
+                <td id="verde0">0</td>
+                <td id="verde1">1</td>
+                <td id="verde2">2</td>
+                <td id="verde3">3</td>
+                <td id="verde4">4</td>
+                <td id="verde5">5</td>
+                <td id="verde6">6</td>
+                <td id="verde7">7</td>
+                <td id="verde8">8</td>
+                <td id="verde9">9</td>
+                <td id="verde10">10</td>
+                <td id="verde11">11</td>
+                <td id="verde12">12</td>
+                <td id="verde13">13</td>
+                <td id="verde14">14</td>
+                <td id="verde15">15</td>
+                <td id="verde16">16</td>
+                <td id="verde17">17</td>
+                <td id="verde18">18</td>
+                <td id="verde19">19</td>
+                <td id="verde20">20</td>
+                <td id="verde21">21</td>
+                <td id="verde22">22</td>
+                <td id="verde23">23</td>
+                <td id="verde24">24</td>
+                <td id="verde25">25</td>
+                <td id="verde26">26</td>
+                <td id="verde27">27</td>
+                <td id="verde28">28</td>
+                <td id="verde29">29</td>
+                <td id="verde30">30</td>
+                <td id="verde31">31</td>
+                <td id="verde32">32</td>
+                <td id="verde33">33</td>
+                <td id="verde34">34</td>
+                <td id="verde35">35</td>
+                <td id="verde36">36</td>
+                <td id="verde37">37</td>
+                <td id="verde38">38</td>
+                <td id="verde39">39</td>
+                <td id="verde40">40</td>
+                <td id="verde41">41</td>
+                <td id="verde42">42</td>
+                <td id="verde43">43</td>
+                <td id="verde44">44</td>
+                <td id="verde45">45</td>
+                <td id="verde46">46</td>
+                <td id="verde47">47</td>
+                <td id="verde48">48</td>
+                <td id="verde49">49</td>
+                <td id="verde50">50</td>
+                <td id="verde51">51</td>
+                <td id="verde52">52</td>
+                <td id="verde53">53</td>
+                <td id="verde54">54</td>
+                <td id="verde55">55</td>
+                <td id="verde56">56</td>
+                <td id="verde57">57</td>
+                <td id="verde58">58</td>
+                <td id="verde59">59</td>
+                <td id="verde60">60</td>
+                <td id="verde61">61</td>
+                <td id="verde62">62</td>
+                <td id="verde63">63</td>
+              </tr>
+              <tr id="amarillo">
+                <th>Amarillo</th>
+                <td id="amarillo0">0</td>
+                <td id="amarillo1">1</td>
+                <td id="amarillo2">2</td>
+                <td id="amarillo3">3</td>
+                <td id="amarillo4">4</td>
+                <td id="amarillo5">5</td>
+                <td id="amarillo6">6</td>
+                <td id="amarillo7">7</td>
+                <td id="amarillo8">8</td>
+                <td id="amarillo9">9</td>
+                <td id="amarillo10">10</td>
+                <td id="amarillo11">11</td>
+                <td id="amarillo12">12</td>
+                <td id="amarillo13">13</td>
+                <td id="amarillo14">14</td>
+                <td id="amarillo15">15</td>
+                <td id="amarillo16">16</td>
+                <td id="amarillo17">17</td>
+                <td id="amarillo18">18</td>
+                <td id="amarillo19">19</td>
+                <td id="amarillo20">20</td>
+                <td id="amarillo21">21</td>
+                <td id="amarillo22">22</td>
+                <td id="amarillo23">23</td>
+                <td id="amarillo24">24</td>
+                <td id="amarillo25">25</td>
+                <td id="amarillo26">26</td>
+                <td id="amarillo27">27</td>
+                <td id="amarillo28">28</td>
+                <td id="amarillo29">29</td>
+                <td id="amarillo30">30</td>
+                <td id="amarillo31">31</td>
+                <td id="amarillo32">32</td>
+                <td id="amarillo33">33</td>
+                <td id="amarillo34">34</td>
+                <td id="amarillo35">35</td>
+                <td id="amarillo36">36</td>
+                <td id="amarillo37">37</td>
+                <td id="amarillo38">38</td>
+                <td id="amarillo39">39</td>
+                <td id="amarillo40">40</td>
+                <td id="amarillo41">41</td>
+                <td id="amarillo42">42</td>
+                <td id="amarillo43">43</td>
+                <td id="amarillo44">44</td>
+                <td id="amarillo45">45</td>
+                <td id="amarillo46">46</td>
+                <td id="amarillo47">47</td>
+                <td id="amarillo48">48</td>
+                <td id="amarillo49">49</td>
+                <td id="amarillo50">50</td>
+                <td id="amarillo51">51</td>
+                <td id="amarillo52">52</td>
+                <td id="amarillo53">53</td>
+                <td id="amarillo54">54</td>
+                <td id="amarillo55">55</td>
+                <td id="amarillo56">56</td>
+                <td id="amarillo57">57</td>
+                <td id="amarillo58">58</td>
+                <td id="amarillo59">59</td>
+                <td id="amarillo60">60</td>
+                <td id="amarillo61">61</td>
+                <td id="amarillo62">62</td>
+                <td id="amarillo63">63</td>
+              </tr>
+              <tr id="cian">
+                <th>Cian</th>
+                <td id="cian0">0</td>
+                <td id="cian1">1</td>
+                <td id="cian2">2</td>
+                <td id="cian3">3</td>
+                <td id="cian4">4</td>
+                <td id="cian5">5</td>
+                <td id="cian6">6</td>
+                <td id="cian7">7</td>
+                <td id="cian8">8</td>
+                <td id="cian9">9</td>
+                <td id="cian10">10</td>
+                <td id="cian11">11</td>
+                <td id="cian12">12</td>
+                <td id="cian13">13</td>
+                <td id="cian14">14</td>
+                <td id="cian15">15</td>
+                <td id="cian16">16</td>
+                <td id="cian17">17</td>
+                <td id="cian18">18</td>
+                <td id="cian19">19</td>
+                <td id="cian20">20</td>
+                <td id="cian21">21</td>
+                <td id="cian22">22</td>
+                <td id="cian23">23</td>
+                <td id="cian24">24</td>
+                <td id="cian25">25</td>
+                <td id="cian26">26</td>
+                <td id="cian27">27</td>
+                <td id="cian28">28</td>
+                <td id="cian29">29</td>
+                <td id="cian30">30</td>
+                <td id="cian31">31</td>
+                <td id="cian32">32</td>
+                <td id="cian33">33</td>
+                <td id="cian34">34</td>
+                <td id="cian35">35</td>
+                <td id="cian36">36</td>
+                <td id="cian37">37</td>
+                <td id="cian38">38</td>
+                <td id="cian39">39</td>
+                <td id="cian40">40</td>
+                <td id="cian41">41</td>
+                <td id="cian42">42</td>
+                <td id="cian43">43</td>
+                <td id="cian44">44</td>
+                <td id="cian45">45</td>
+                <td id="cian46">46</td>
+                <td id="cian47">47</td>
+                <td id="cian48">48</td>
+                <td id="cian49">49</td>
+                <td id="cian50">50</td>
+                <td id="cian51">51</td>
+                <td id="cian52">52</td>
+                <td id="cian53">53</td>
+                <td id="cian54">54</td>
+                <td id="cian55">55</td>
+                <td id="cian56">56</td>
+                <td id="cian57">57</td>
+                <td id="cian58">58</td>
+                <td id="cian59">59</td>
+                <td id="cian60">60</td>
+                <td id="cian61">61</td>
+                <td id="cian62">62</td>
+                <td id="cian63">63</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <br><br>
+    <div class="container d-flex" >
+        <button id="lanzaDados" class="btn btn-primary lanzaDados" onclick="lanzaDados()">Lanza los dados</button>
+    </div>
+    
+    <!-- <div class="container d-flex" >
+        <button id="lanzaRojo" class="btn btn-primary lanzaDados" accesskey="rojo">Lanza los dados Rojo</button>
+        <button id="lanzaMagenta" class="btn btn-primary lanzaDados"  style="margin-left: 50px;" accesskey="magenta">Lanza los dados Magenta</button>
+        <button id="lanzaVerde" class="btn btn-primary lanzaDados"  style="margin-left: 50px;" accesskey="verde">Lanza los dados Verde</button>
+        <button id="lanzaAmarillo" class="btn btn-primary lanzaDados"  style="margin-left: 50px;" accesskey="amarillo">Lanza los dados Amarillo</button>
+        <button id="lanzaCian" class="btn btn-primary lanzaDados"  style="margin-left: 50px;" accesskey="cian">Lanza los dados Cian</button>
+    </div> -->
+    <div class="alert-box warning" id="warning">test</div>
+    <footer style="margin-top: 100px;height: 200px;background-color: grey;">
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <script src="parcial1.js"></script>
+</body>
+</html>
